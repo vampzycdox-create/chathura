@@ -1,8 +1,10 @@
 import React from 'react';
 import TiltCard from './ui/TiltCard';
-import { ArrowRight, Globe } from 'lucide-react';
 import { SUBSIDIARY_COMPANIES } from '../data/companies';
-import { BooleanMainLogo } from './icons/Logos';
+
+// === CONFIGURATION ===
+// Replace this URL with your main "The Boolean" logo image
+const MAIN_LOGO_URL = "https://placehold.co/100x100/transparent/white?text=B"; 
 
 const BentoGrid: React.FC = () => {
   const handleNavigation = (url: string) => {
@@ -46,7 +48,8 @@ const BentoGrid: React.FC = () => {
             {/* Logo & Title */}
             <div className="flex flex-col items-center gap-6 mb-8 animate-float">
                 <div className="p-4 bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 shadow-xl shadow-purple-900/20">
-                     <BooleanMainLogo />
+                     {/* MAIN LOGO IMAGE */}
+                     <img src={MAIN_LOGO_URL} alt="The Boolean" className="w-16 h-16 object-contain" />
                 </div>
                 <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-white tracking-tight drop-shadow-2xl">
                   The Boolean
@@ -58,12 +61,12 @@ const BentoGrid: React.FC = () => {
               Solutions that unlock <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400">freedom</span>
             </h2>
 
-            {/* Interaction Hint */}
-             <div className="mt-auto flex items-center gap-3 text-sm text-gray-400 uppercase tracking-widest group-hover:text-white transition-colors duration-300 cursor-pointer">
-                <Globe className="w-4 h-4" />
-                <span>Visit Official Website</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-             </div>
+            {/* Navigation Button */}
+            <div className="px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 transition-all backdrop-blur-sm flex items-center gap-2 group-hover:gap-3">
+              <span className="text-sm font-medium tracking-wide">VISIT OFFICIAL WEBSITE</span>
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </div>
+            
           </div>
         </TiltCard>
 
@@ -103,8 +106,14 @@ const BentoGrid: React.FC = () => {
                   
                   {/* Bottom Row: Info */}
                   <div className="flex flex-col gap-4">
-                    {/* Logo Component */}
-                    <company.LogoComponent />
+                    {/* Logo Image */}
+                    <div className="h-10 flex items-center mb-4">
+                      <img 
+                        src={company.logoUrl} 
+                        alt={`${company.name} Logo`} 
+                        className="h-full w-auto object-contain max-w-[200px]" 
+                      />
+                    </div>
 
                     <p className="text-gray-400 text-sm md:text-base line-clamp-2 leading-relaxed group-hover:text-gray-200 transition-colors">
                         {company.description}

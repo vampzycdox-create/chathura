@@ -11,7 +11,8 @@ export const BooleanMainLogo = () => (
 export const BooleanLabLogo = () => (
   <div className="flex items-center gap-4 mb-2">
     <div className="h-10 w-10 bg-[#fbbf24] rounded-[10px] relative overflow-hidden flex-shrink-0 flex items-center justify-center shadow-lg shadow-yellow-500/20">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="translate-x-[2px] translate-y-[1px]">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="img/g365.png
+      " className="translate-x-[2px] translate-y-[1px]">
         <path d="M4 8C4 5.79086 5.79086 4 8 4H14C16.2091 4 18 5.79086 18 8V16C18 18.2091 16.2091 20 14 20H12" stroke="white" strokeWidth="4" strokeLinecap="round"/>
         <path d="M12 14C12.5523 14 13 13.5523 13 13C13 12.4477 12.5523 12 12 12C11.4477 12 11 12.4477 11 13C11 13.5523 11.4477 14 12 14Z" fill="black"/>
       </svg>
